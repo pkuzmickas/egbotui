@@ -1,0 +1,62 @@
+.center {
+  text-align: center;
+}
+.btn {
+  color: white;
+}
+.btn:hover {
+  color: white;
+}
+::-webkit-input-placeholder {
+  font-style: italic;
+}
+:-moz-placeholder {
+  font-style: italic;
+}
+::-moz-placeholder {
+  font-style: italic;
+}
+:-ms-input-placeholder {
+  font-style: italic;
+}
+.info-section {
+  background: #7f4e26;
+  text-align: justify;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1em;
+}
+.gray-border {
+  border: 1px solid darkgray;
+  border-radius: 20px;
+}
+.info {
+  margin-left: 1em;
+  margin-right: 1em;
+  margin-top: 1em;
+  color: white;
+}
+.egg {
+  height: 70%;
+  margin-top: 30%;
+}
+.row-main {
+  height: 20em;
+}
+.normal-height {
+  height: 100%;
+}
+.border {
+  border-color: #7f4e26 !important;
+}
+.brown-bg-border {
+  background-color: #7f4e26 !important;
+  border-color: #7f4e26 !important;
+}
+
+.link {
+  color: #fff;
+}
+.link:hover {
+  color: #fff;
+}

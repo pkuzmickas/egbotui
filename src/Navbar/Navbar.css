@@ -1,0 +1,40 @@
+html {
+  font-family: "Roboto,WebRoboto,Arial,Helvetica,sans-serif";
+}
+.navbar-header {
+  float: left;
+  padding: 15px;
+  text-align: center;
+  width: 100%;
+  /* border-bottom: 1px solid #ababab; */
+  /* box-shadow: 0 4px 2px -2px gray; */
+}
+.navbar-brand {
+  float: none;
+  font-size: 5.5rem;
+  font-family: "Roboto,WebRoboto,Arial,Helvetica,sans-serif";
+  color: #7f4e26;
+}
+.eg {
+  color: #ff7200;
+}
+.bot {
+  color: #7f4e26;
+}
+.sub-title {
+  color: #7f4e26;
+}
+.left {
+  margin-right: 4em;
+}
+.right {
+  margin-left: 4em;
+}
+
+.no-hover:hover {
+  color: #7f4e26;
+}
+
+/* button {
+  border: none;
+} */

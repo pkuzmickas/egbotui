@@ -12,3 +12,22 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.site-brown {
+  background-color: #0098CC!important; 
+  color: white;
+}
+
+.site-brown:hover {
+  color:white; 
+}
+
+.site-text {
+  color:#525252;
+}
+
+.brown-background {
+  background: #7F4E26;
+  color:white;
+}
+

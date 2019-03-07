@@ -1,0 +1,43 @@
+.no-padding {
+    padding: 0;
+}
+.tabsize {
+    width: 12.499999995%;
+}
+.row {
+    margin-left: 20%!important;
+    margin-right: 20%!important;
+  }
+
+.center {
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.padded {
+    padding: 1em;
+}
+.padded15 {
+   
+    padding: 1em;
+    padding-top:1.5em;
+}
+
+.introduction {
+    height: 20em;
+}
+.full-height {
+    height: 100%;
+}
+.rounded {
+    border-radius:  10px!important;
+}
+
+iframe {border:5px solid #000;
+     
+}
+
+.text-padding {
+    padding: 0.5em;
+    text-align: justify;
+}
