@@ -11,7 +11,10 @@
     height: 80%;
 }
 .blue-background {
-    background: #ecf0f1;
+    background: #f7f7f7;
+}
+.greenish {
+    background: #ecffee;
 }
 .info-section {
     background: #ecf0f1;
@@ -50,3 +53,14 @@
     margin-right:1em;
 }
 
+.related {
+    margin-bottom: .5em;
+}
+
+#response {
+    width: 100%;
+}
+
+.no-mg-top {
+    margin-top: 0;
+}
