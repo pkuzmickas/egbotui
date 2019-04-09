@@ -27,7 +27,7 @@
   margin-top: 1em;
 }
 .gray-border {
-  border: 1px solid darkgray;
+  border: 1px solid black;
   border-radius: 20px;
 }
 .info {
@@ -47,11 +47,11 @@
   height: 100%;
 }
 .border {
-  border-color: #7f4e26 !important;
+  border-color: black !important;
 }
 .brown-bg-border {
-  background-color: #7f4e26 !important;
-  border-color: #7f4e26 !important;
+  background-color: #525252 !important;
+  border-color: black !important;
 }
 
 .link {

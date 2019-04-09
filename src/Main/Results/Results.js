@@ -22,12 +22,20 @@ class Results extends Component {
   handleClick = event => {
     // accessible
     if (event.target.classList[0] == "positive") {
-      event.target.style.color =
-        event.target.style.color == "green" ? "black" : "green";
+      if (event.target.style.color == "green") {
+        event.target.style.color = "black";
+      } else {
+        event.target.style.color = "green";
+        this.refs.thumbsdown.style = "black";
+      }
     }
     if (event.target.classList[0] == "negative") {
-      event.target.style.color =
-        event.target.style.color == "red" ? "black" : "red";
+      if (event.target.style.color == "red") {
+        event.target.style.color = "black";
+      } else {
+        event.target.style.color = "red";
+        this.refs.thumbsup.style = "black";
+      }
     }
   };
   example = (
@@ -58,8 +66,27 @@ class Results extends Component {
     let list = [];
     for (let i = 0; i < relatedList.length; i++) {
       list.push(
-        <div class="related gray-border blue-background" id="examples">
-          <p class="info">{relatedList[i].title}</p>
+        <div>
+          <button
+            class="related gray-border blue-background not-button"
+            id="examples"
+            type="button"
+            data-toggle="collapse"
+            data-target={"#collapse" + i}
+            aria-expanded="false"
+            aria-controls={"collapse" + i}
+          >
+            <p class="info">{relatedList[i].title}</p>
+          </button>
+          <div class="collapse" id={"collapse" + i}>
+            <a
+              class="card card-body not-link not-button"
+              href={relatedList[i].link}
+              target="_blank"
+            >
+              {relatedList[i].body_markdown}
+            </a>
+          </div>
         </div>
       );
     }
@@ -128,10 +155,18 @@ class Results extends Component {
                 </p>
                 <div class="feedback">
                   <i>Was this example helpful?</i>{" "}
-                  <span onClick={this.handleClick} class="positive thumbs fa">
+                  <span
+                    onClick={this.handleClick}
+                    class="positive thumbs fa"
+                    ref="thumbsup"
+                  >
                     &#xf087;
                   </span>{" "}
-                  <span onClick={this.handleClick} class="negative thumbs fa">
+                  <span
+                    onClick={this.handleClick}
+                    class="negative thumbs fa"
+                    ref="thumbsdown"
+                  >
                     &#xf088;
                   </span>
                 </div>
@@ -144,6 +179,16 @@ class Results extends Component {
                 <span class="bigger">Related queries </span>{" "}
               </p>
               {related}
+              {/* <button
+                class="btn btn-primary"
+                type="button"
+                data-toggle="collapse"
+                data-target="#collapseExample"
+                aria-expanded="false"
+                aria-controls="collapseExample"
+              >
+                Button with data-target
+              </button> */}
             </div>
           </div>
         </div>

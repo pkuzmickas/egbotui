@@ -17,6 +17,15 @@ class SearchForm extends Component {
       inputValue: evt.target.value
     });
   }
+  keyPressed = (e) => {
+    if (e.key === 'Enter') {
+      this.search();
+    }
+  }
+  search() {
+    if(this.state.inputValue)
+      this.props.history.push('/results/' + this.state.inputValue)
+  }
   render() {
     return (
       <div class="container main-container">
@@ -29,13 +38,14 @@ class SearchForm extends Component {
               class="form-control border"
               placeholder="What do you want to know about?"
               onChange={this.updateInputValue}
+              onKeyPress={this.keyPressed}
             />
             <span class="input-group-btn">
               <button
                 type="button"
                 class="btn brown-bg-border"
                 onClick={() => {
-                  this.props.history.push('/results/' + this.state.inputValue);
+                  this.search();
                 }}
               >
                 GO
