@@ -23,8 +23,9 @@ class SearchForm extends Component {
     }
   }
   search() {
-    if(this.state.inputValue)
-      this.props.history.push('/results/' + this.state.inputValue)
+    if(this.state.inputValue) {
+      this.props.history.push('/results/' + this.state.inputValue);
+    }
   }
   render() {
     return (

@@ -93,3 +93,7 @@
 .thumbs:hover {
     cursor: pointer;
 }
+
+.links {
+    color:blue!important;
+}

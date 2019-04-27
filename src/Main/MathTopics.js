@@ -1,4 +1,13 @@
 class MathTopics {
+  static mainTopics = [
+    "Algebra",
+    "Calculus",
+    "Geometry",
+    "Combinatorics",
+    "Logic",
+    "Number Theory"
+  ];
+
   static algebraTopics = [
     { name: "Elementary" },
     { name: "Abstract" },

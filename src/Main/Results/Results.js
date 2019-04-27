@@ -4,8 +4,12 @@ import "./Results.css";
 import { ok } from "assert";
 import { Link, withRouter } from "react-router-dom";
 import { browserHistory } from "react-router-dom";
+import MathTopics from "../MathTopics";
 
 class Results extends Component {
+
+  specialWords = [];
+
   constructor(props) {
     super(props);
     this.state = {
@@ -17,10 +21,54 @@ class Results extends Component {
       topic = this.formatUrl(location.pathname);
       this.getAnswer(topic);
     });
+    
+    this.fillSpecialList();
+  }
+
+  fillSpecialList() {
+    MathTopics.combinatoricsTopics.forEach(element => {
+      this.specialWords.push(element.name + " combinatorics")
+    });
+    MathTopics.geometryTopics.forEach(element => {
+      this.specialWords.push(element.name + " geometry")
+    });
+    MathTopics.logicTopics.forEach(element => {
+      this.specialWords.push(element.name + " logic")
+    });
+    MathTopics.numberTheoryTopics.forEach(element => {
+      this.specialWords.push(element.name + " number theory")
+    });
+    MathTopics.calculusTopics.forEach(element => {
+      this.specialWords.push(element.name + " calculus")
+    });
+    MathTopics.algebraTopics.forEach(element => {
+      this.specialWords.push(element.name + " algebra")
+    });
+  }
+
+  formatExample(example) {
+    let newExample = [];
+    let markers = {};
+    this.specialWords.forEach(element => {
+      let i = example.toLowerCase().indexOf(element.toLowerCase());
+      if(i != -1) {
+        markers[i] = element;
+      }
+    });
+    let lastInd = 0;
+    for(let i=0; i<example.length; i++) {
+      if(markers[i]!=undefined) {
+        newExample.push(example.substring(lastInd, i));
+        newExample.push(<Link className="links" to={'/results/' + markers[i]}>{example.substring(i, i+markers[i].length)}</Link>)
+        lastInd=markers[i].length + i;
+        i+=markers[i].length-1;
+      } 
+    }
+    newExample.push(example.substring(lastInd, example.length));
+    return newExample;
   }
 
   handleClick = event => {
-    // accessible
     if (event.target.classList[0] == "positive") {
       if (event.target.style.color == "green") {
         event.target.style.color = "black";
@@ -76,7 +124,7 @@ class Results extends Component {
             aria-expanded="false"
             aria-controls={"collapse" + i}
           >
-            <p class="info">{relatedList[i].title}</p>
+            <p class="info">{this.formatMarkdown(relatedList[i].title)}</p>
           </button>
           <div class="collapse" id={"collapse" + i}>
             <a
@@ -84,7 +132,7 @@ class Results extends Component {
               href={relatedList[i].link}
               target="_blank"
             >
-              {relatedList[i].body_markdown}
+              {this.formatMarkdown(relatedList[i].body_markdown)}
             </a>
           </div>
         </div>
@@ -92,6 +140,27 @@ class Results extends Component {
     }
     return list;
   };
+
+  formatMarkdown(text) {
+    //let markdown = [""];
+
+    text = text.replace(new RegExp("&#39;", 'g'), "\'");
+    text = text.replace(/\**/g, "")
+
+    // text = text.split('$');
+    // for(let i=0; i<text.length; i++) {
+    //   if(text[i]=='') continue;
+
+      
+
+    //   markdown.push(text[i]);
+    //   i++;
+    //   while(text[i]=='' || text[i]==' ') i++;
+    //   markdown.push(<div lang="latex">{text[i]}</div>);
+    // }
+    // return markdown;
+    return text;
+  }
 
   formatUrl(url = null) {
     if (!url) {
@@ -109,14 +178,19 @@ class Results extends Component {
 
   getAnswer(query) {
     let url = "https://egbot.good-loop.com/ask?q=" + query;
-    console.log(url);
     return fetch(url)
-      .then(resp => resp.json())
+      .then(resp => resp.ok ? resp.json() : null)
       .then(rjson => {
-        this.setState({
-          answ: rjson
-        });
-        console.log(this.state.answ);
+        if(rjson) {
+          this.setState({
+            answ: rjson
+          });
+        }
+        else {
+          this.setState({
+            answ: null
+          });
+        }
       })
       .catch(error => {
         console.error(error);
@@ -128,10 +202,18 @@ class Results extends Component {
     let example;
     if (!this.state.answ) {
       related = <div />;
-      example = <div />;
+      example = 
+      <div>
+        <h5>Unable to generate example...</h5>
+        Please try:<br/> 
+        <Link to="/results/Give me an example of a conditional probability problem">"Give me an example of a conditional probability problem."</Link>
+        <br/>
+        <Link to="/results/What is a Bayesian network?">"What is a Bayesian network?"</Link>
+      </div>;
     } else {
       related = this.showRelated(this.state.answ.data.relatedQs);
       example = this.state.answ.data.generatedAnswer;
+      example = this.formatExample(example);
     }
     return (
       <div>
