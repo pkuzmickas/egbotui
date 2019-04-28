@@ -1,6 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
+## Welcome to EgBot!
 
 In the project directory, you can run:
 
@@ -12,57 +10,17 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.<br>
 You will also see any lint errors in the console.
 
-### `npm test`
+## Project Information
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Welcome to Egbot! This website is part of a research project interested
+in how examples are used mathematical research(<a href="https://discovery.dundee.ac.uk/en/publications/automating-human-like-example-use-in-mathematics" target="_blank">LINK</a>). We are curious
+whether we can create a machine which would be able to participate in
+mathematical conversations in a meaningful way. The purpose of this website
+is to generate examples based on a search query that a user provides.
+We are using a machine learning model trained on the data from mathstackexchange(<a href="https://docs.google.com/document/d/1IGQnW_WT9LOiR69kUilRUCcUbGwbR_JHCxnyNiAkU9I/" target="_blank">LINK</a>).
+Try exploring the website by clicking on various mathematical fields below.
+Also please provide feedback to the examples generated so we can improve them!
+We also provide links to related questions on mathstackexchange, so feel free
+to use them if our generated answer is not sufficient. Hopefully this website
+will be of use to you and feedback is always appreciated. Enjoy the website and if you
+wish to contact us, you can email us at pkuzmickas@dundee.ac.uk
